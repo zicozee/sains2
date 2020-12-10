@@ -1,0 +1,17 @@
+include *.txt
+include *.md
+include *.cfg
+include *.pkl
+include *.in
+recursive-include ./sainsbury_discontinued/*
+
+include sainsbury_discontinued/datasets/training_data.csv
+include sainsbury_discontinued/datasets/testing_data.csv
+include sainsbury_discontinued/trained_models/*.pkl
+include sainsbury_discontinued/VERSION
+
+include ./requirements.txt
+exclude *.log
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
