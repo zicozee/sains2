@@ -14,7 +14,7 @@ def test_prediction_endpoint_validation_200(flask_test_client):
     post_json = test_data.to_json(orient='records')
 
     # When
-    response = flask_test_client.post('/v1/predict/classifer',
+    response = flask_test_client.post('/v1/predict/classifier',
                                       json=json.loads(post_json))
 
     # Then
