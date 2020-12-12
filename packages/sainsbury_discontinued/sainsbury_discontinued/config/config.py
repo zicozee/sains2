@@ -3,7 +3,7 @@ import os
 
 # create directories
 # Package root
-PWD = os.path.dirname(os.path.abspath(__file__))
+PWD = os.path.dirname(os.path.abspath(sainsbury_discontinued.__file__))
 PACKAGE_ROOT = os.path.abspath(os.path.join(PWD, '..'))
 
 # dataset directory
