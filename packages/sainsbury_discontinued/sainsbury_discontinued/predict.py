@@ -25,11 +25,11 @@ def make_prediction(*, input_data) -> dict:
     """
     # data = pd.read_json(input_data)
     data = pd.DataFrame(input_data)
-    prediction = _discontinued_pipe.predict(data[config.FEATURES])
+    output = _discontinued_pipe.predict(data[config.FEATURES])
     prob = _discontinued_pipe.predict_proba(data[config.FEATURES])
     prob_1 = prob[:, 1]
 
-    results = {"predictions": prediction,
+    results = {"predictions": output,
                "propensity": prob_1, "version": _version}
 
     _logger.info(
