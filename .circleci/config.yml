@@ -1,4 +1,4 @@
-version:2 
+version: 2 
 jobs:
   test_classification_model:
     working_directory: ~/project
@@ -16,7 +16,7 @@ jobs:
             py.test -vv packages/sainsbury_discontinued/tests 
 
 workflows:
-  version:2
+  version: 2
   test-all:
     jobs: 
       - test_classification_model
