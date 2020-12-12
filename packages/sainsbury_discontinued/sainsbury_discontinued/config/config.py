@@ -4,19 +4,19 @@ import sainsbury_discontinued
 
 # create directories
 # Package root
-# PWD = os.path.dirname(os.path.abspath(__file__))
-# PACKAGE_ROOT = os.path.abspath(os.path.join(PWD, '..'))
+PWD = os.path.dirname(os.path.abspath(sainsbury_discontinued.__file__))
+PACKAGE_ROOT = os.path.abspath(os.path.join(PWD, '..'))
 
-# # dataset directory
-# DATASET_DIR = os.path.join(PACKAGE_ROOT, 'datasets')
+# dataset directory
+DATASET_DIR = os.path.join(PACKAGE_ROOT, 'datasets')
 
-# # trained model directory
-# TRAINED_MODEL_DIR = os.path.join(PACKAGE_ROOT, 'trained_models')
+# trained model directory
+TRAINED_MODEL_DIR = os.path.join(PACKAGE_ROOT, 'trained_models')
 
 
-PACKAGE_ROOT = pathlib.Path(sainsbury_discontinued.__file__).resolve().parent
-TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
-DATASET_DIR = PACKAGE_ROOT / "datasets"
+# PACKAGE_ROOT = pathlib.Path(sainsbury_discontinued.__file__).resolve().parent
+# TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
+# DATASET_DIR = PACKAGE_ROOT / "datasets"
 
 
 # data
