@@ -38,4 +38,4 @@ def make_prediction(*, input_data) -> dict:
         f"Predictions: {results}"
     )
 
-    return results, prob_1
+    return results
