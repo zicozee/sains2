@@ -1,6 +1,6 @@
 import os
 import pathlib
-
+import sainsbury_discontinued
 
 # create directories
 # Package root
