@@ -13,7 +13,7 @@ jobs:
             . venv/bin/activate
             pip install --upgrade pip 
             pip install -r packages/sainsbury_discontinued/requirements.txt
-            PYTHONPATH=. py.test -vv packages/sainsbury_discontinued/sainsbury_discontinued/tests 
+            py.test -vv packages/sainsbury_discontinued/tests 
 
 workflows:
   version: 2
