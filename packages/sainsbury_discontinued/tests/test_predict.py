@@ -1,5 +1,5 @@
 import math
-
+import numpy as np
 from sainsbury_discontinued.predict import make_prediction
 from sainsbury_discontinued.processing.data_management import load_dataset
 
@@ -11,10 +11,11 @@ def test_make_single_prediction():
 
     # When
     subject = make_prediction(input_data=single_test_json)
+    print(subject.get('predictions')[0])
 
     # Then
     assert subject is not None
-    assert isinstance(subject.get('predictions')[0], int)
+    assert isinstance((subject.get('predictions')[0]), np.integer)
     assert math.ceil(subject.get('predictions')[0]) == 0
 
 
@@ -29,7 +30,7 @@ def test_make_multiple_predictions():
 
     # Then
     assert subject is not None
-    # assert len(subject.get('predictions')) == 100
+    assert len(subject.get('predictions')) == 100
 
     # We expect some rows to be filtered out
     assert len(subject.get('predictions')) == original_data_length
