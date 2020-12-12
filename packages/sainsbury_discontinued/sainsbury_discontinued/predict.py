@@ -6,11 +6,10 @@ from sainsbury_discontinued.config import config
 from sainsbury_discontinued import __version__ as _version
 
 
-
 _logger = logging.getLogger(__name__)
 
 
-_discontinued_pipe = dm.load_pipeline(file_name = config.PIPELINE_PATH)
+_discontinued_pipe = dm.load_pipeline(file_name=config.PIPELINE_PATH)
 
 
 def make_prediction(*, input_data) -> dict:
@@ -24,13 +23,14 @@ def make_prediction(*, input_data) -> dict:
         2)Propensity for each input row 
         3)Model version.
     """
-    data = pd.read_json(input_data)
- 
+    # data = pd.read_json(input_data)
+    data = pd.DataFrame(input_data)
     prediction = _discontinued_pipe.predict(data[config.FEATURES])
     prob = _discontinued_pipe.predict_proba(data[config.FEATURES])
-    prob_1 = prob[:,1]
+    prob_1 = prob[:, 1]
 
-    results = {"predictions": prediction,"propensity": prob_1, "version": _version}
+    results = {"predictions": prediction,
+               "propensity": prob_1, "version": _version}
 
     _logger.info(
         f"model version: {_version} "
@@ -39,8 +39,3 @@ def make_prediction(*, input_data) -> dict:
     )
 
     return results, prob_1
-
-
-
-
-
