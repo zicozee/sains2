@@ -4,8 +4,13 @@ import sainsbury_discontinued
 
 # create directories
 # Package root
-PWD = os.path.dirname(os.path.abspath(sainsbury_discontinued.__file__))
-PACKAGE_ROOT = os.path.abspath(os.path.join(PWD, '..'))
+# PWD = os.path.dirname(os.path.abspath(sainsbury_discontinued.__file__))
+# PACKAGE_ROOT = os.path.abspath(os.path.join(PWD, '..'))
+
+# PWD = os.path.dirname(os.path.abspath(sainsbury_discontinued.__file__))
+PACKAGE_ROOT = os.path.dirname(
+    os.path.abspath(sainsbury_discontinued.__file__))
+
 
 # dataset directory
 DATASET_DIR = os.path.join(PACKAGE_ROOT, 'datasets')
